@@ -1,6 +1,20 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+// pages/_app.tsx
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+      <ScrollToTopButton />
+      <Footer id="contact_us"/>
+    </>
+  );
 }
+
+export default MyApp;
